@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/selecionarJogadoresLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantos_participantes" />
+
+        <LinearLayout
+            android:id="@+id/selecionarQtdJogadoresLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/twoPlayersBt"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:text="@string/_2_jogadores" />
+
+            <Button
+                android:id="@+id/threePlayersBt"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:text="@string/_3_jogadores" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/playLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selecionarJogadoresLl"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/jogadaLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/labelJogadaTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selecione_sua_jogada" />
+
+            <ImageButton
+                android:id="@+id/pedraIb"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/pedra"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:background="@color/transparent"
+                android:layout_marginHorizontal="5dp" />
+
+            <ImageButton
+                android:id="@+id/papelIb"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/papel"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:background="@color/transparent"
+                android:layout_marginHorizontal="5dp" />
+
+            <ImageButton
+                android:id="@+id/tesouraIb"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/tesoura"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:background="@color/transparent"
+                android:layout_marginHorizontal="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playerPcUmLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/labelJogadaComputadorUmTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jogada_do_computador_1" />
+
+            <ImageView
+                android:id="@+id/jogadaComputadorUmIv"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_below="@id/jogadaLl"
+                android:layout_toEndOf="@id/labelJogadaComputadorUmTv"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playerPcDoisLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jogada_do_computador_2" />
+
+            <ImageView
+                android:id="@+id/jogadaComputadorDoisIv"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/labelResultadoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/resultado" />
+
+        <TextView
+            android:id="@+id/resultadoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/resetGameBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="resetGame"
+            android:text="Reiniciar" />
+
+    </LinearLayout>
+
+</RelativeLayout>
